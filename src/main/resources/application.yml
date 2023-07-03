@@ -1,0 +1,40 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: springboot-school-blog
+  # redis配置
+  redis:
+    host: localhost
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: Asia/Shanghai
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dqsy?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: chenfei520
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    db-config:
+      id-type: auto
+logging:
+  file:
+    name: application.log
+wxLogin:
+  tempUserIdUrl: https://server01.vicy.cn/8lXdSX7FSMykbl9nFDWESdc6zfouSAEz/wxLogin/tempUserId
+  #  接入扫码，个人密钥
+  secretKey: 0f3af202b35c432bb470caba64afa0c0
+files:
+  upload:
+    path: /opt/file/
+
+
+

@@ -1,0 +1,337 @@
+2023-06-08 20:50:24.043  INFO 12532 --- [main] c.d.b.BackendBlogSystemApplication       : Starting BackendBlogSystemApplication using Java 1.8.0_151 on LUCKY-20230213C with PID 12532 (D:\dev\idea-workspace\backend-blog-system\target\classes started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 20:50:24.048  INFO 12532 --- [main] c.d.b.BackendBlogSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 20:50:25.203  INFO 12532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 20:50:25.205  INFO 12532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 20:50:25.226  INFO 12532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-08 20:50:25.849  INFO 12532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-08 20:50:25.862  INFO 12532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-08 20:50:25.862  INFO 12532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-06-08 20:50:26.321  INFO 12532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-08 20:50:26.321  INFO 12532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2224 ms
+2023-06-08 20:50:28.658  INFO 12532 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 20:50:29.451  INFO 12532 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 20:50:29.563  INFO 12532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-08 20:50:29.582  INFO 12532 --- [main] c.d.b.BackendBlogSystemApplication       : Started BackendBlogSystemApplication in 5.972 seconds (JVM running for 7.919)
+2023-06-08 20:50:29.796  INFO 12532 --- [RMI TCP Connection(1)-192.168.111.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-08 20:50:29.796  INFO 12532 --- [RMI TCP Connection(1)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-08 20:50:29.800  INFO 12532 --- [RMI TCP Connection(1)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-06-08 20:50:30.131  INFO 12532 --- [RMI TCP Connection(3)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-08 20:50:30.374  INFO 12532 --- [RMI TCP Connection(3)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-08 20:50:33.031  WARN 12532 --- [boundedElastic-1] o.s.b.a.r.RedisReactiveHealthIndicator   : Redis health check failed
+
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1689) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1597) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1383) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1366) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedReactiveConnection(LettuceConnectionFactory.java:1117) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:509) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:103) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at reactor.core.publisher.MonoSupplier.call(MonoSupplier.java:86) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.4.18.jar:3.4.18]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_151]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_151]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_151]
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at java.util.Optional.orElseGet(Optional.java:267) ~[na:1.8.0_151]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1595) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	... 15 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_151]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_151]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:995) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_151]
+
+2023-06-08 20:51:04.096  INFO 12532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-08 20:51:04.105  INFO 12532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-08 20:51:09.149  INFO 3584 --- [main] c.d.b.BackendBlogSystemApplication       : Starting BackendBlogSystemApplication using Java 1.8.0_151 on LUCKY-20230213C with PID 3584 (D:\dev\idea-workspace\backend-blog-system\target\classes started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 20:51:09.152  INFO 3584 --- [main] c.d.b.BackendBlogSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 20:51:10.031  INFO 3584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 20:51:10.033  INFO 3584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 20:51:10.055  INFO 3584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2023-06-08 20:51:10.576  INFO 3584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-08 20:51:10.583  INFO 3584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-08 20:51:10.583  INFO 3584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-06-08 20:51:10.676  INFO 3584 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-08 20:51:10.676  INFO 3584 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1477 ms
+2023-06-08 20:51:12.662  INFO 3584 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 20:51:15.164  INFO 3584 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 20:51:15.213  INFO 3584 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-08 20:51:15.227  INFO 3584 --- [main] c.d.b.BackendBlogSystemApplication       : Started BackendBlogSystemApplication in 6.45 seconds (JVM running for 7.226)
+2023-06-08 20:51:15.705  INFO 3584 --- [RMI TCP Connection(1)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-08 20:51:15.880  INFO 3584 --- [RMI TCP Connection(1)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-08 20:51:15.982  INFO 3584 --- [RMI TCP Connection(3)-192.168.111.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-08 20:51:15.983  INFO 3584 --- [RMI TCP Connection(3)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-08 20:51:15.984  INFO 3584 --- [RMI TCP Connection(3)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-06-08 20:51:18.506  WARN 3584 --- [boundedElastic-1] o.s.b.a.r.RedisReactiveHealthIndicator   : Redis health check failed
+
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1689) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1597) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1383) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1366) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedReactiveConnection(LettuceConnectionFactory.java:1117) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:509) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:103) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at reactor.core.publisher.MonoSupplier.call(MonoSupplier.java:86) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:227) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.4.18.jar:3.4.18]
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.4.18.jar:3.4.18]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_151]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[na:1.8.0_151]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[na:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_151]
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216) ~[lettuce-core-6.1.8.RELEASE.jar:6.1.8.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at java.util.Optional.orElseGet(Optional.java:267) ~[na:1.8.0_151]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1595) ~[spring-data-redis-2.6.4.jar:2.6.4]
+	... 15 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_151]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_151]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:995) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.77.Final.jar:4.1.77.Final]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_151]
+
+2023-06-08 20:52:55.120  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 20:52:55.127  INFO 3584 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:52:55.129  INFO 3584 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:52:58.585  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 20:52:58.595  INFO 3584 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:52:58.595  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:53:01.171  INFO 3584 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:53:25.230  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/qr-login/generation-qrcode?query=null
+2023-06-08 20:53:35.577  INFO 3584 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://wg9ndn.natappfree.cc:80/api/qr-login/acknowledge-callback?query=null
+2023-06-08 20:53:52.080  INFO 3584 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:53.520  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:53.850  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/like/page-by-userpageNum=1&pageSize=10&articleUser=钉钉
+2023-06-08 20:53:54.270  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:55.360  INFO 3584 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:56.096  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:56.458  INFO 3584 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:57.543  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:57.894  INFO 3584 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/like/page-by-userpageNum=1&pageSize=10&articleUser=钉钉
+2023-06-08 20:53:58.625  INFO 3584 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:59.009  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:53:59.933  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:54:02.268  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:55:46.484  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:55:46.484  INFO 3584 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 20:55:46.491  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 20:55:49.074  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:55:49.884  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 20:55:50.436  INFO 3584 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:55:50.890  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 20:55:51.431  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:56:56.831  INFO 3584 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:56:58.087  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:56:58.747  INFO 3584 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:56:59.321  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/like/page-by-userpageNum=1&pageSize=10&articleUser=钉钉
+2023-06-08 20:56:59.937  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:57:00.605  INFO 3584 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:57:01.069  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:57:04.316  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 20:57:04.342  INFO 3584 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/img/add?query=null
+2023-06-08 20:57:04.359  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:57:06.325  INFO 3584 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 20:57:07.062  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 20:57:25.137  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 20:57:57.134  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:57:59.549  INFO 3584 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 20:57:59.567  INFO 3584 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/img/add?query=null
+2023-06-08 20:57:59.584  INFO 3584 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:58:10.667  INFO 3584 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：DELETE::http://localhost:9999/api/img/delete/138?query=null
+2023-06-08 20:58:10.685  INFO 3584 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:58:14.861  INFO 3584 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 20:58:14.882  INFO 3584 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/img/add?query=null
+2023-06-08 20:58:14.906  INFO 3584 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 20:58:54.329  INFO 3584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-08 20:58:54.337  INFO 3584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-08 20:59:04.603  INFO 9032 --- [main] c.d.b.BackendBlogSystemApplication       : Starting BackendBlogSystemApplication using Java 1.8.0_151 on LUCKY-20230213C with PID 9032 (D:\dev\idea-workspace\backend-blog-system\target\classes started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 20:59:04.605  INFO 9032 --- [main] c.d.b.BackendBlogSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 20:59:05.749  INFO 9032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 20:59:05.751  INFO 9032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 20:59:05.771  INFO 9032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-06-08 20:59:06.300  INFO 9032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2023-06-08 20:59:06.307  INFO 9032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-08 20:59:06.307  INFO 9032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-06-08 20:59:06.425  INFO 9032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-08 20:59:06.425  INFO 9032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1767 ms
+2023-06-08 20:59:07.961  INFO 9032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 20:59:08.350  INFO 9032 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 20:59:08.397  INFO 9032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-08 20:59:08.408  INFO 9032 --- [main] c.d.b.BackendBlogSystemApplication       : Started BackendBlogSystemApplication in 4.161 seconds (JVM running for 4.857)
+2023-06-08 20:59:08.747  INFO 9032 --- [RMI TCP Connection(5)-192.168.111.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-08 20:59:08.748  INFO 9032 --- [RMI TCP Connection(5)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-08 20:59:08.753  INFO 9032 --- [RMI TCP Connection(5)-192.168.111.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-06-08 20:59:08.995  INFO 9032 --- [RMI TCP Connection(7)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-08 20:59:09.114  INFO 9032 --- [RMI TCP Connection(7)-192.168.111.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-08 20:59:59.539  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:00:01.510  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：DELETE::http://localhost:9999/api/img/delete/139?query=null
+2023-06-08 21:00:01.532  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:00:21.767  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:00:22.269  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:00:38.645  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/data-echart?query=null
+2023-06-08 21:00:38.730  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/log/get-echart-data?query=null
+2023-06-08 21:00:47.661  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:00:47.663  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:47.663  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:53.001  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:53.004  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:00:53.004  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:54.779  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:00:54.782  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:54.785  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:56.992  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:00:56.993  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:56.994  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:00:58.896  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/qr-login/generation-qrcode?query=null
+2023-06-08 21:01:03.035  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://wg9ndn.natappfree.cc:80/api/qr-login/acknowledge-callback?query=null
+2023-06-08 21:01:31.685  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:01:32.217  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:03:05.017  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:05.018  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:05.020  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:06.936  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:06.936  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:06.946  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:13.617  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/data-echart?query=null
+2023-06-08 21:03:13.683  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/log/get-echart-data?query=null
+2023-06-08 21:03:24.438  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:24.439  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:24.440  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:27.252  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:27.254  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:27.254  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:27.678  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:27.679  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:27.679  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:28.990  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/qr-login/generation-qrcode?query=null
+2023-06-08 21:03:53.183  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:03:53.184  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:53.184  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:03:54.637  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/qr-login/generation-qrcode?query=null
+2023-06-08 21:04:16.362  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:04:16.362  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:04:16.363  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:04:23.156  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/qr-login/generation-qrcode?query=null
+2023-06-08 21:04:26.755  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://wg9ndn.natappfree.cc:80/api/qr-login/acknowledge-callback?query=null
+2023-06-08 21:04:26.971  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://wg9ndn.natappfree.cc:80/api/qr-login/acknowledge-callback?query=null
+2023-06-08 21:05:17.299  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:05:17.895  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:05:18.337  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:05:18.801  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:05:19.399  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:05:19.399  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:19.399  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:19.953  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:05:20.362  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:05:20.362  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:20.362  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:21.625  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:05:25.557  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=你好呀
+2023-06-08 21:05:26.953  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:05:26.954  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:26.956  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:31.913  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:05:34.245  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=10
+2023-06-08 21:05:37.706  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 21:05:37.737  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/rotation/add?query=null
+2023-06-08 21:05:37.739  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=10
+2023-06-08 21:05:45.240  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:05:45.243  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:05:45.244  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:06:09.584  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:06:10.089  INFO 9032 --- [http-nio-9999-exec-9] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:06:19.442  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 21:06:22.311  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 21:06:24.091  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/article/add?query=null
+2023-06-08 21:06:24.147  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:06:27.404  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/recommend/list?query=null
+2023-06-08 21:06:27.406  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/hot-search/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:06:27.407  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/rotation/pagepageNum=1&pageSize=5&param=
+2023-06-08 21:06:27.785  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:06:29.325  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:06:29.997  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:06:34.690  INFO 9032 --- [http-nio-9999-exec-4] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:06:35.271  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/notice/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:06:35.713  INFO 9032 --- [http-nio-9999-exec-8] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:06:38.042  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:06:39.890  INFO 9032 --- [http-nio-9999-exec-1] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/file/upload?query=null
+2023-06-08 21:06:39.892  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/img/add?query=null
+2023-06-08 21:06:39.906  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/page-userpageNum=1&pageSize=10&param=钉钉
+2023-06-08 21:06:41.562  INFO 9032 --- [http-nio-9999-exec-7] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/img/pagepageNum=1&pageSize=10
+2023-06-08 21:06:44.125  INFO 9032 --- [http-nio-9999-exec-6] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:06:45.922  INFO 9032 --- [http-nio-9999-exec-5] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/getById/684?query=null
+2023-06-08 21:06:47.438  INFO 9032 --- [http-nio-9999-exec-3] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/like/add?query=null
+2023-06-08 21:06:47.604  INFO 9032 --- [http-nio-9999-exec-2] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：POST::http://localhost:9999/api/like/add?query=null
+2023-06-08 21:06:49.056  INFO 9032 --- [http-nio-9999-exec-10] c.dingding.backendblogsystem.aop.LogAop  : 请求地址：GET::http://localhost:9999/api/article/pagepageNum=1&pageSize=10&param=
+2023-06-08 21:21:51.040  INFO 9032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-08 21:21:51.051  INFO 9032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-08 21:22:14.417  INFO 1496 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Starting BackendBlogSystemApplicationTests using Java 1.8.0_151 on LUCKY-20230213C with PID 1496 (started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 21:22:14.419  INFO 1496 --- [main] c.d.b.BackendBlogSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 21:22:15.865  INFO 1496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 21:22:15.868  INFO 1496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 21:22:15.890  INFO 1496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-06-08 21:22:20.756  INFO 1496 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 21:22:21.437  INFO 1496 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 21:22:21.510  INFO 1496 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Started BackendBlogSystemApplicationTests in 7.453 seconds (JVM running for 8.798)
+2023-06-08 21:32:37.884  INFO 1484 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Starting BackendBlogSystemApplicationTests using Java 1.8.0_151 on LUCKY-20230213C with PID 1484 (started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 21:32:37.908  INFO 1484 --- [main] c.d.b.BackendBlogSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 21:32:39.091  INFO 1484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 21:32:39.094  INFO 1484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 21:32:39.124  INFO 1484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2023-06-08 21:32:42.347  INFO 1484 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 21:32:43.086  INFO 1484 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 21:32:43.140  INFO 1484 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Started BackendBlogSystemApplicationTests in 5.586 seconds (JVM running for 6.475)
+2023-06-08 21:39:07.755  INFO 15540 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Starting BackendBlogSystemApplicationTests using Java 1.8.0_151 on LUCKY-20230213C with PID 15540 (started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 21:39:07.757  INFO 15540 --- [main] c.d.b.BackendBlogSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 21:39:08.798  INFO 15540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 21:39:08.800  INFO 15540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 21:39:08.826  INFO 15540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-06-08 21:39:11.977  INFO 15540 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 21:39:12.655  INFO 15540 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 21:39:12.708  INFO 15540 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Started BackendBlogSystemApplicationTests in 5.297 seconds (JVM running for 6.915)
+2023-06-08 21:44:38.575  INFO 14272 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Starting BackendBlogSystemApplicationTests using Java 1.8.0_151 on LUCKY-20230213C with PID 14272 (started by Administrator in D:\dev\idea-workspace\backend-blog-system)
+2023-06-08 21:44:38.577  INFO 14272 --- [main] c.d.b.BackendBlogSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08 21:44:39.855  INFO 14272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-06-08 21:44:39.858  INFO 14272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-06-08 21:44:39.882  INFO 14272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-06-08 21:44:43.145  INFO 14272 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 21:44:43.784  INFO 14272 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-06-08 21:44:43.847  INFO 14272 --- [main] c.d.b.BackendBlogSystemApplicationTests  : Started BackendBlogSystemApplicationTests in 5.64 seconds (JVM running for 6.656)
